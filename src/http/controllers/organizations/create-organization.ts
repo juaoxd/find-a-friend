@@ -1,3 +1,4 @@
+import { OrganizationAlreadyExistsError } from '@/use-cases/errors/organization-already-exists-error'
 import { makeCreateOrganizationUseCase } from '@/use-cases/factories/make-create-organization-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
@@ -28,7 +29,11 @@ export async function createOrganization(
       whatsapp,
     })
   } catch (err) {
-    return reply.status(500).send(err)
+    if (err instanceof OrganizationAlreadyExistsError) {
+      return reply.status(400).send({ message: err.message })
+    }
+
+    throw err
   }
 
   return reply.status(201).send()
