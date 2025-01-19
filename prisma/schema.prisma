@@ -18,9 +18,14 @@ model Organization {
   responsible_name String
   email            String   @unique
   password_hash    String
-  address          String
   whatsapp         String
   created_at       DateTime @default(now())
+
+  cep          String
+  city         String
+  street       String
+  neighborhood String
+  state        String
 
   @@map("organizations")
 }

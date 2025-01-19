@@ -11,12 +11,25 @@ export async function createOrganization(
     responsibleName: z.string(),
     email: z.string().email(),
     password: z.string().min(6),
-    address: z.string(),
+    cep: z.string(),
+    city: z.string(),
+    street: z.string(),
+    neighborhood: z.string(),
+    state: z.string(),
     whatsapp: z.string(),
   })
 
-  const { responsibleName, email, password, address, whatsapp } =
-    createOrganizationBodySchema.parse(request.body)
+  const {
+    responsibleName,
+    email,
+    password,
+    cep,
+    city,
+    street,
+    neighborhood,
+    state,
+    whatsapp,
+  } = createOrganizationBodySchema.parse(request.body)
 
   try {
     const createOrganizationUseCase = makeCreateOrganizationUseCase()
@@ -25,7 +38,11 @@ export async function createOrganization(
       responsibleName,
       email,
       password,
-      address,
+      cep,
+      city,
+      street,
+      neighborhood,
+      state,
       whatsapp,
     })
   } catch (err) {

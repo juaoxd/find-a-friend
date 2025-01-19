@@ -7,7 +7,11 @@ interface CreateOrganizationUseCaseRequest {
   responsibleName: string
   email: string
   password: string
-  address: string
+  cep: string
+  city: string
+  street: string
+  neighborhood: string
+  state: string
   whatsapp: string
 }
 
@@ -24,7 +28,11 @@ export class CreateOrganizationUseCase {
     responsibleName,
     email,
     password,
-    address,
+    cep,
+    city,
+    street,
+    neighborhood,
+    state,
     whatsapp,
   }: CreateOrganizationUseCaseRequest): Promise<CreateOrganizationUseCaseResponse> {
     const organizationWithSameEmail =
@@ -40,7 +48,11 @@ export class CreateOrganizationUseCase {
       responsible_name: responsibleName,
       email,
       password_hash,
-      address,
+      cep,
+      city,
+      street,
+      neighborhood,
+      state,
       whatsapp,
     })
 

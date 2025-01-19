@@ -19,7 +19,11 @@ describe('Authenticate use case', () => {
       responsible_name: 'John Doe',
       email: 'johndoe@email.com',
       password_hash: await hash('123456', 6),
-      address: 'Rua Um, 2, Sao Paulo - SP',
+      cep: '13600-170',
+      city: 'Araras',
+      state: 'Sao Paulo',
+      street: 'Rua Barao de Arary, 721',
+      neighborhood: 'Centro',
       whatsapp: '(11) 9 9999-9999',
     })
 
@@ -36,7 +40,11 @@ describe('Authenticate use case', () => {
       responsible_name: 'John Doe',
       email: 'johndoe@email.com',
       password_hash: await hash('123456', 6),
-      address: 'Rua Um, 2, Sao Paulo - SP',
+      cep: '13600-170',
+      city: 'Araras',
+      state: 'Sao Paulo',
+      street: 'Rua Barao de Arary, 721',
+      neighborhood: 'Centro',
       whatsapp: '(11) 9 9999-9999',
     })
 

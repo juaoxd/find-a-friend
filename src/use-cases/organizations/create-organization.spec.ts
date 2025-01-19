@@ -18,7 +18,11 @@ describe('Create organization use case', () => {
       responsibleName: 'John Doe',
       email: 'johndoe@email.com',
       password: '123456',
-      address: 'Rua Um, n 23, Sao Paulo - SP',
+      cep: '13600-170',
+      city: 'Araras',
+      state: 'Sao Paulo',
+      street: 'Rua Barao de Arary, 721',
+      neighborhood: 'Centro',
       whatsapp: '(19) 9 9999-9999',
     })
 
@@ -32,7 +36,11 @@ describe('Create organization use case', () => {
       responsibleName: 'John Doe',
       email,
       password: '123456',
-      address: 'Rua Um, n 23, Sao Paulo - SP',
+      cep: '13600-170',
+      city: 'Araras',
+      state: 'Sao Paulo',
+      street: 'Rua Barao de Arary, 721',
+      neighborhood: 'Centro',
       whatsapp: '(19) 9 9999-9999',
     })
 
@@ -41,7 +49,11 @@ describe('Create organization use case', () => {
         responsibleName: 'John Doe 2',
         email,
         password: '12345678',
-        address: 'Rua Dois, n 24, Rio de Janeiro - RJ',
+        cep: '13600-170',
+        city: 'Araras',
+        state: 'Sao Paulo',
+        street: 'Rua Barao de Arary, 721',
+        neighborhood: 'Centro',
         whatsapp: '(19) 9 7070-7070',
       }),
     ).rejects.toBeInstanceOf(OrganizationAlreadyExistsError)
